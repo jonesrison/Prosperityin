@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Counter</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #counter {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        #description {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="counter">0</div>
+    </div>
+    <script>
+        function calculateDays() {
+            const startDate = new Date("2024-11-30");
+            const today = new Date();
+            const diffInTime = today - startDate;
+            const diffInDays = Math.floor(diffInTime / (1000 * 60 * 60 * 24));
+            document.getElementById("counter").textContent = diffInDays;
+        }
+        calculateDays();
+    </script>
+</body>
+</html>
